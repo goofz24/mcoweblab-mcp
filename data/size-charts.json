@@ -1,0 +1,63 @@
+{
+  "$comment": "SAMPLE size charts for the demo. These are typical apparel ranges written for this project, NOT the presets from Mel's MCO Size Guide app and NOT any client's real sizing. Replace them with the Size Guide app's presets before showing this as real data. All measurements are stored in inches; the server converts to centimeters.",
+  "sample": true,
+  "charts": [
+    {
+      "id": "unisex-tshirt",
+      "name": { "en": "Unisex T-shirt", "es": "Camiseta unisex" },
+      "measurements": [
+        { "id": "chest", "name": { "en": "Chest", "es": "Pecho" } },
+        { "id": "length", "name": { "en": "Body length", "es": "Largo del cuerpo" } }
+      ],
+      "howToMeasure": {
+        "en": "Measure around the fullest part of the chest, under the arms. Measure length from the highest point of the shoulder to the hem.",
+        "es": "Mide alrededor de la parte más ancha del pecho, debajo de los brazos. Mide el largo desde el punto más alto del hombro hasta el ruedo."
+      },
+      "sizes": [
+        { "size": "S", "chest": [34, 37], "length": [28, 28] },
+        { "size": "M", "chest": [38, 41], "length": [29, 29] },
+        { "size": "L", "chest": [42, 45], "length": [30, 30] },
+        { "size": "XL", "chest": [46, 49], "length": [31, 31] },
+        { "size": "2XL", "chest": [50, 53], "length": [32, 32] }
+      ]
+    },
+    {
+      "id": "womens-top",
+      "name": { "en": "Women's top", "es": "Blusa de mujer" },
+      "measurements": [
+        { "id": "bust", "name": { "en": "Bust", "es": "Busto" } },
+        { "id": "waist", "name": { "en": "Waist", "es": "Cintura" } }
+      ],
+      "howToMeasure": {
+        "en": "Measure around the fullest part of the bust, and around the natural waist (the narrowest part).",
+        "es": "Mide alrededor de la parte más llena del busto, y alrededor de la cintura natural (la parte más estrecha)."
+      },
+      "sizes": [
+        { "size": "XS", "bust": [31, 32], "waist": [24, 25] },
+        { "size": "S", "bust": [33, 34], "waist": [26, 27] },
+        { "size": "M", "bust": [35, 36], "waist": [28, 29] },
+        { "size": "L", "bust": [37.5, 39], "waist": [30.5, 32] },
+        { "size": "XL", "bust": [40.5, 42], "waist": [33.5, 35] }
+      ]
+    },
+    {
+      "id": "kids-tshirt",
+      "name": { "en": "Kids' T-shirt", "es": "Camiseta de niños" },
+      "measurements": [
+        { "id": "chest", "name": { "en": "Chest", "es": "Pecho" } },
+        { "id": "height", "name": { "en": "Child's height", "es": "Estatura del niño" } }
+      ],
+      "howToMeasure": {
+        "en": "Measure around the fullest part of the chest. Height is the child's height without shoes.",
+        "es": "Mide alrededor de la parte más ancha del pecho. La estatura es la del niño sin zapatos."
+      },
+      "sizes": [
+        { "size": "XS (4-5)", "chest": [23, 24], "height": [40, 44] },
+        { "size": "S (6-7)", "chest": [25, 26], "height": [45, 50] },
+        { "size": "M (8-10)", "chest": [27, 28.5], "height": [51, 56] },
+        { "size": "L (12-14)", "chest": [29.5, 31], "height": [57, 62] },
+        { "size": "XL (16)", "chest": [32, 33.5], "height": [63, 66] }
+      ]
+    }
+  ]
+}

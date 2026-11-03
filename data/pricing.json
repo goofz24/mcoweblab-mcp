@@ -1,0 +1,230 @@
+{
+  "$comment": "Copied from the quote calculator (quote-calculator-v2, website/api/pricing.json) so both projects share one price list. Prices are whole US dollars. Only the four starting prices and the $50/month maintenance match mcoweblab.com/services. Every path in \"unconfirmed\" is a PLACEHOLDER Mel has not approved, and the MCP server labels any quote that uses one as a draft. rush.offered is false because Mel decided rush delivery is off for the first launch.",
+  "version": 2,
+  "currency": "USD",
+  "unconfirmed": [
+    "estimate.upperBufferPercent",
+    "rush.feePercent",
+    "projectTypes.custom-website.includedPages",
+    "projectTypes.custom-website.extraPagePrice",
+    "projectTypes.custom-website.maxPages",
+    "projectTypes.custom-website.baseWeeks",
+    "projectTypes.custom-website.extraPagesPerWeek",
+    "projectTypes.shopify-store.includedPages",
+    "projectTypes.shopify-store.extraPagePrice",
+    "projectTypes.shopify-store.maxPages",
+    "projectTypes.shopify-store.baseWeeks",
+    "projectTypes.shopify-store.extraPagesPerWeek",
+    "projectTypes.qr-menu.includedPages",
+    "projectTypes.qr-menu.extraPagePrice",
+    "projectTypes.qr-menu.maxPages",
+    "projectTypes.qr-menu.baseWeeks",
+    "projectTypes.qr-menu.extraPagesPerWeek",
+    "projectTypes.wallet-card.baseWeeks",
+    "addons.bilingual.price",
+    "addons.bilingual.extraWeeks",
+    "addons.contact-form.price",
+    "addons.contact-form.extraWeeks",
+    "addons.seo-starter.price",
+    "addons.seo-starter.extraWeeks",
+    "addons.copywriting.price",
+    "addons.copywriting.extraWeeks",
+    "addons.product-upload.price",
+    "addons.product-upload.extraWeeks",
+    "addons.custom-section.price",
+    "addons.custom-section.extraWeeks",
+    "addons.menu-photos.price",
+    "addons.menu-photos.extraWeeks",
+    "addons.wallet-design.price",
+    "addons.wallet-design.extraWeeks"
+  ],
+  "estimate": {
+    "upperBufferPercent": 25,
+    "upperRoundingStep": 10
+  },
+  "rush": {
+    "offered": false,
+    "feePercent": 25
+  },
+  "projectTypes": [
+    {
+      "id": "custom-website",
+      "label": {
+        "en": "Custom website",
+        "es": "Sitio web a la medida"
+      },
+      "description": {
+        "en": "Fast, hand-built site for your business.",
+        "es": "Sitio rápido, hecho a mano para tu negocio."
+      },
+      "basePrice": 399,
+      "includedPages": 3,
+      "extraPagePrice": 60,
+      "maxPages": 20,
+      "baseWeeks": 2,
+      "extraPagesPerWeek": 3
+    },
+    {
+      "id": "shopify-store",
+      "label": {
+        "en": "Shopify store",
+        "es": "Tienda Shopify"
+      },
+      "description": {
+        "en": "Online store set up and ready to sell.",
+        "es": "Tienda en línea lista para vender."
+      },
+      "basePrice": 800,
+      "includedPages": 5,
+      "extraPagePrice": 75,
+      "maxPages": 20,
+      "baseWeeks": 3,
+      "extraPagesPerWeek": 4
+    },
+    {
+      "id": "qr-menu",
+      "label": {
+        "en": "Digital QR menu",
+        "es": "Menú digital QR"
+      },
+      "description": {
+        "en": "Mobile menu your guests open with a QR code.",
+        "es": "Menú móvil que tus clientes abren con un código QR."
+      },
+      "basePrice": 250,
+      "includedPages": 1,
+      "extraPagePrice": 40,
+      "maxPages": 5,
+      "baseWeeks": 1,
+      "extraPagesPerWeek": 2
+    },
+    {
+      "id": "wallet-card",
+      "label": {
+        "en": "Loyalty wallet card",
+        "es": "Tarjeta de lealtad digital"
+      },
+      "description": {
+        "en": "Apple Wallet and Google Wallet loyalty pass.",
+        "es": "Pase de lealtad para Apple Wallet y Google Wallet."
+      },
+      "basePrice": 150,
+      "includedPages": 1,
+      "extraPagePrice": 0,
+      "maxPages": 1,
+      "baseWeeks": 1,
+      "extraPagesPerWeek": 0
+    }
+  ],
+  "addons": [
+    {
+      "id": "bilingual",
+      "label": {
+        "en": "English + Spanish version",
+        "es": "Versión en inglés y español"
+      },
+      "price": 150,
+      "extraWeeks": 1,
+      "appliesTo": [
+        "custom-website",
+        "shopify-store",
+        "qr-menu"
+      ]
+    },
+    {
+      "id": "contact-form",
+      "label": {
+        "en": "Contact or booking form",
+        "es": "Formulario de contacto o citas"
+      },
+      "price": 75,
+      "extraWeeks": 0,
+      "appliesTo": [
+        "custom-website",
+        "shopify-store"
+      ]
+    },
+    {
+      "id": "seo-starter",
+      "label": {
+        "en": "SEO starter setup",
+        "es": "Configuración SEO inicial"
+      },
+      "price": 120,
+      "extraWeeks": 0,
+      "appliesTo": [
+        "custom-website",
+        "shopify-store"
+      ]
+    },
+    {
+      "id": "copywriting",
+      "label": {
+        "en": "Copywriting help",
+        "es": "Ayuda con los textos"
+      },
+      "price": 100,
+      "extraWeeks": 1,
+      "appliesTo": [
+        "custom-website",
+        "shopify-store",
+        "qr-menu"
+      ]
+    },
+    {
+      "id": "product-upload",
+      "label": {
+        "en": "Product upload (up to 25)",
+        "es": "Carga de productos (hasta 25)"
+      },
+      "price": 90,
+      "extraWeeks": 1,
+      "appliesTo": [
+        "shopify-store"
+      ]
+    },
+    {
+      "id": "custom-section",
+      "label": {
+        "en": "Custom Shopify section",
+        "es": "Sección Shopify personalizada"
+      },
+      "price": 150,
+      "extraWeeks": 1,
+      "appliesTo": [
+        "shopify-store"
+      ]
+    },
+    {
+      "id": "menu-photos",
+      "label": {
+        "en": "Dish photo layout",
+        "es": "Diseño con fotos de platos"
+      },
+      "price": 60,
+      "extraWeeks": 0,
+      "appliesTo": [
+        "qr-menu"
+      ]
+    },
+    {
+      "id": "wallet-design",
+      "label": {
+        "en": "Custom pass design",
+        "es": "Diseño de pase personalizado"
+      },
+      "price": 50,
+      "extraWeeks": 0,
+      "appliesTo": [
+        "wallet-card"
+      ]
+    }
+  ],
+  "maintenance": {
+    "label": {
+      "en": "Monthly maintenance",
+      "es": "Mantenimiento mensual"
+    },
+    "monthlyPrice": 50
+  }
+}
