@@ -1,0 +1,390 @@
+{
+  "$comment": "SAMPLE knowledge base for the IT helper tools. Written for this project as a small-office help desk (MCO WebLab style). Steps are general Windows 11 / Microsoft 365 guidance, not any real company's internal procedures. selfService false means the person must NOT be walked through it by the AI: a technician handles it.",
+  "sample": true,
+  "articles": [
+    {
+      "id": "KB0001",
+      "category": "access",
+      "selfService": false,
+      "title": { "en": "Forgot password or account locked", "es": "Olvidé mi contraseña o mi cuenta está bloqueada" },
+      "keywords": {
+        "en": ["password", "forgot", "locked", "lockout", "reset", "sign in", "login", "expired"],
+        "es": ["contraseña", "clave", "olvide", "bloqueada", "bloqueado", "restablecer", "iniciar sesion", "expiro"]
+      },
+      "summary": {
+        "en": "Use the self-service reset page if your company has one. Otherwise a technician resets it after confirming who you are.",
+        "es": "Usa la página de restablecimiento si tu empresa la tiene. Si no, un técnico la restablece después de confirmar tu identidad."
+      },
+      "steps": {
+        "en": [
+          "Wait 15 minutes: many lockouts clear on their own.",
+          "Try the self-service password reset link from your welcome email.",
+          "If it still fails, open a ticket. A technician will call you to confirm your identity before resetting it.",
+          "Never send your password in a ticket, chat or email."
+        ],
+        "es": [
+          "Espera 15 minutos: muchos bloqueos se quitan solos.",
+          "Prueba el enlace de restablecimiento de contraseña de tu correo de bienvenida.",
+          "Si sigue fallando, abre un ticket. Un técnico te llamará para confirmar tu identidad antes de restablecerla.",
+          "Nunca envíes tu contraseña en un ticket, chat o correo."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Always: identity must be verified by a person before any reset.",
+        "es": "Siempre: una persona debe verificar la identidad antes de cualquier restablecimiento."
+      }
+    },
+    {
+      "id": "KB0002",
+      "category": "access",
+      "selfService": true,
+      "title": { "en": "Set up or fix multi-factor authentication (MFA)", "es": "Configurar o arreglar la verificación en dos pasos (MFA)" },
+      "keywords": {
+        "en": ["mfa", "2fa", "authenticator", "code", "verification", "two factor", "new phone", "approve"],
+        "es": ["mfa", "2fa", "autenticador", "codigo", "verificacion", "dos pasos", "telefono nuevo", "aprobar"]
+      },
+      "summary": {
+        "en": "Most MFA problems are a wrong phone clock or a new phone that was never registered.",
+        "es": "La mayoría de los problemas de MFA son la hora del teléfono mal puesta o un teléfono nuevo que nunca se registró."
+      },
+      "steps": {
+        "en": [
+          "Make sure the phone's date and time are set automatically.",
+          "Open the authenticator app and check you are using the code for the right account.",
+          "Got a new phone? The old phone or a technician is needed to move MFA. Open a ticket.",
+          "Never approve a sign-in request you did not start. Report it as a security issue."
+        ],
+        "es": [
+          "Verifica que la fecha y hora del teléfono estén en automático.",
+          "Abre la aplicación autenticadora y verifica que usas el código de la cuenta correcta.",
+          "¿Teléfono nuevo? Se necesita el teléfono viejo o un técnico para mover el MFA. Abre un ticket.",
+          "Nunca apruebes una solicitud de inicio de sesión que tú no empezaste. Repórtala como problema de seguridad."
+        ]
+      },
+      "escalateWhen": {
+        "en": "A new phone without the old one, or any sign-in request the person did not start.",
+        "es": "Un teléfono nuevo sin el viejo, o cualquier solicitud de inicio de sesión que la persona no empezó."
+      }
+    },
+    {
+      "id": "KB0003",
+      "category": "network",
+      "selfService": true,
+      "title": { "en": "Wi-Fi connected but no internet", "es": "Wi-Fi conectado pero sin internet" },
+      "keywords": {
+        "en": ["wifi", "wi-fi", "internet", "no internet", "network", "disconnected", "slow internet", "router"],
+        "es": ["wifi", "wi-fi", "internet", "sin internet", "red", "desconectado", "internet lento", "router"]
+      },
+      "summary": {
+        "en": "Check whether it is only this computer or everyone, then reset the connection.",
+        "es": "Verifica si es solo esta computadora o todos, y luego reinicia la conexión."
+      },
+      "steps": {
+        "en": [
+          "Check if other devices on the same Wi-Fi have internet. If none do, the router or provider is down: restart the router or call the provider.",
+          "Turn Wi-Fi off and on, or turn Airplane mode on for 10 seconds and off again.",
+          "Settings > Network & internet > Advanced network settings > Network reset (needs a restart).",
+          "Ask the IT helper to run the network-config and ping-internet diagnostics and attach the result to the ticket."
+        ],
+        "es": [
+          "Verifica si otros equipos en el mismo Wi-Fi tienen internet. Si ninguno tiene, el router o el proveedor está caído: reinicia el router o llama al proveedor.",
+          "Apaga y prende el Wi-Fi, o activa el modo avión por 10 segundos y desactívalo.",
+          "Configuración > Red e Internet > Configuración de red avanzada > Restablecimiento de red (requiere reiniciar).",
+          "Pide al asistente de IT que corra los diagnósticos network-config y ping-internet y adjunta el resultado al ticket."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Several people are offline at once, or the network reset did not help.",
+        "es": "Varias personas están sin conexión a la vez, o el restablecimiento de red no ayudó."
+      }
+    },
+    {
+      "id": "KB0004",
+      "category": "network",
+      "selfService": true,
+      "title": { "en": "VPN won't connect", "es": "La VPN no conecta" },
+      "keywords": {
+        "en": ["vpn", "remote", "work from home", "tunnel", "can't connect", "connection failed"],
+        "es": ["vpn", "remoto", "trabajo desde casa", "tunel", "no conecta", "fallo la conexion"]
+      },
+      "summary": {
+        "en": "The VPN needs working internet first, then a valid password and MFA.",
+        "es": "La VPN necesita internet funcionando primero, y después contraseña y MFA válidos."
+      },
+      "steps": {
+        "en": [
+          "Open any website. If nothing loads, fix the internet first (KB0003).",
+          "Close the VPN app completely and open it again.",
+          "Check that your password has not expired and you approved the MFA prompt.",
+          "Write down the exact error message and the time, and add them to the ticket."
+        ],
+        "es": [
+          "Abre cualquier página web. Si nada carga, arregla el internet primero (KB0003).",
+          "Cierra la aplicación de VPN por completo y ábrela otra vez.",
+          "Verifica que tu contraseña no haya expirado y que aprobaste el aviso de MFA.",
+          "Anota el mensaje de error exacto y la hora, y añádelos al ticket."
+        ]
+      },
+      "escalateWhen": {
+        "en": "The error mentions a certificate, or it fails for more than one person.",
+        "es": "El error menciona un certificado, o falla para más de una persona."
+      }
+    },
+    {
+      "id": "KB0005",
+      "category": "hardware",
+      "selfService": true,
+      "title": { "en": "Printer not printing", "es": "La impresora no imprime" },
+      "keywords": {
+        "en": ["printer", "print", "printing", "paper jam", "queue", "offline printer", "toner"],
+        "es": ["impresora", "imprimir", "imprime", "papel atascado", "cola", "impresora desconectada", "toner"]
+      },
+      "summary": {
+        "en": "Most print problems are a stuck queue, the wrong default printer, or a jam.",
+        "es": "La mayoría de los problemas de impresión son una cola atascada, la impresora predeterminada equivocada o papel atascado."
+      },
+      "steps": {
+        "en": [
+          "Check the printer screen for a jam, empty tray or low toner.",
+          "Settings > Bluetooth & devices > Printers & scanners: check the right printer is the default and is not 'Offline'.",
+          "Open the print queue and cancel stuck jobs, then print again.",
+          "Restart the printer and the computer."
+        ],
+        "es": [
+          "Mira la pantalla de la impresora por papel atascado, bandeja vacía o tóner bajo.",
+          "Configuración > Bluetooth y dispositivos > Impresoras y escáneres: verifica que la impresora correcta sea la predeterminada y que no diga 'Sin conexión'.",
+          "Abre la cola de impresión, cancela los trabajos atascados y vuelve a imprimir.",
+          "Reinicia la impresora y la computadora."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Nobody can print to it, or it needs a new driver installed.",
+        "es": "Nadie puede imprimir en ella, o necesita instalar un driver nuevo."
+      }
+    },
+    {
+      "id": "KB0006",
+      "category": "software",
+      "selfService": true,
+      "title": { "en": "Outlook not sending or receiving email", "es": "Outlook no envía ni recibe correos" },
+      "keywords": {
+        "en": ["outlook", "email", "e-mail", "mail", "outbox", "not sending", "not receiving", "inbox"],
+        "es": ["outlook", "correo", "email", "e-mail", "bandeja de salida", "no envia", "no recibe", "bandeja de entrada"]
+      },
+      "summary": {
+        "en": "Check if Outlook is offline, then compare with Outlook on the web.",
+        "es": "Verifica si Outlook está desconectado y compara con Outlook en la web."
+      },
+      "steps": {
+        "en": [
+          "Look at the bottom bar: if it says 'Working Offline', turn it off (Send/Receive tab).",
+          "Check the Outbox for a large attachment that is stuck, and remove it.",
+          "Sign in to Outlook on the web. If email works there, the problem is the Outlook app: close and reopen it, then restart.",
+          "If it fails on the web too, open a ticket."
+        ],
+        "es": [
+          "Mira la barra de abajo: si dice 'Trabajar sin conexión', desactívalo (pestaña Enviar y recibir).",
+          "Revisa la Bandeja de salida por un archivo grande atascado y quítalo.",
+          "Entra a Outlook en la web. Si el correo funciona ahí, el problema es la aplicación: ciérrala, ábrela y reinicia la computadora.",
+          "Si falla en la web también, abre un ticket."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Email fails on the web too, or the mailbox is full.",
+        "es": "El correo falla en la web también, o el buzón está lleno."
+      }
+    },
+    {
+      "id": "KB0007",
+      "category": "hardware",
+      "selfService": true,
+      "title": { "en": "Computer is slow", "es": "La computadora está lenta" },
+      "keywords": {
+        "en": ["slow", "freezing", "frozen", "lag", "performance", "high memory", "hangs", "not responding"],
+        "es": ["lenta", "lento", "congelada", "se pega", "rendimiento", "memoria", "no responde", "se queda pegada"]
+      },
+      "summary": {
+        "en": "Restart first, then look at memory, disk space and startup apps.",
+        "es": "Reinicia primero y luego revisa la memoria, el espacio en disco y las aplicaciones de inicio."
+      },
+      "steps": {
+        "en": [
+          "Restart (not just shut the lid). If it has been on for over a week, this alone often fixes it.",
+          "Ask the IT helper to run the health check: it shows memory use, free disk space and uptime.",
+          "Ask for the top-processes diagnostic to see which app uses the most memory.",
+          "Turn off apps you don't need at startup: Settings > Apps > Startup."
+        ],
+        "es": [
+          "Reinicia (no solo cierres la tapa). Si lleva más de una semana prendida, esto solo muchas veces lo arregla.",
+          "Pide al asistente de IT que corra el chequeo de salud: muestra el uso de memoria, el espacio libre y el tiempo encendida.",
+          "Pide el diagnóstico top-processes para ver qué aplicación usa más memoria.",
+          "Desactiva las aplicaciones que no necesitas al inicio: Configuración > Aplicaciones > Inicio."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Still slow after a restart and freeing disk space, or the disk makes noise.",
+        "es": "Sigue lenta después de reiniciar y liberar espacio, o el disco hace ruido."
+      }
+    },
+    {
+      "id": "KB0008",
+      "category": "hardware",
+      "selfService": true,
+      "title": { "en": "Disk almost full", "es": "El disco está casi lleno" },
+      "keywords": {
+        "en": ["disk", "storage", "full", "space", "low disk", "c drive", "free up"],
+        "es": ["disco", "almacenamiento", "lleno", "espacio", "poco espacio", "disco c", "liberar"]
+      },
+      "summary": {
+        "en": "Windows needs at least 10% free space to update and run well.",
+        "es": "Windows necesita por lo menos 10% de espacio libre para actualizarse y funcionar bien."
+      },
+      "steps": {
+        "en": [
+          "Settings > System > Storage > Temporary files: remove them.",
+          "Turn on Storage Sense on the same page.",
+          "Empty the Recycle Bin and move large videos to OneDrive (choose 'Free up space').",
+          "Uninstall apps you don't use: Settings > Apps > Installed apps, sort by size."
+        ],
+        "es": [
+          "Configuración > Sistema > Almacenamiento > Archivos temporales: elimínalos.",
+          "Activa el Sensor de almacenamiento en la misma página.",
+          "Vacía la Papelera de reciclaje y mueve los videos grandes a OneDrive (escoge 'Liberar espacio').",
+          "Desinstala las aplicaciones que no usas: Configuración > Aplicaciones > Aplicaciones instaladas, ordena por tamaño."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Less than 5% free after cleanup, or the person can't tell what is safe to delete.",
+        "es": "Menos de 5% libre después de limpiar, o la persona no sabe qué es seguro borrar."
+      }
+    },
+    {
+      "id": "KB0009",
+      "category": "security",
+      "selfService": false,
+      "title": { "en": "Report a phishing email or suspicious link", "es": "Reportar un correo de phishing o un enlace sospechoso" },
+      "keywords": {
+        "en": ["phishing", "suspicious", "scam", "clicked a link", "fake email", "hacked", "virus", "malware", "ransomware"],
+        "es": ["phishing", "sospechoso", "estafa", "le di click", "correo falso", "hackeado", "virus", "malware", "ransomware"]
+      },
+      "summary": {
+        "en": "Do not click or reply. If you already clicked or typed a password, report it right away: it is urgent.",
+        "es": "No hagas clic ni contestes. Si ya hiciste clic o escribiste una contraseña, repórtalo de inmediato: es urgente."
+      },
+      "steps": {
+        "en": [
+          "Do not click links, open attachments or reply.",
+          "Use the 'Report' button in Outlook (Report > Phishing).",
+          "If you clicked the link or typed a password: disconnect from Wi-Fi and call IT now. Don't wait for a ticket reply.",
+          "Do not forward the email to coworkers to ask if it's real."
+        ],
+        "es": [
+          "No hagas clic en enlaces, no abras archivos adjuntos y no contestes.",
+          "Usa el botón 'Informar' en Outlook (Informar > Phishing).",
+          "Si hiciste clic o escribiste una contraseña: desconéctate del Wi-Fi y llama a IT ahora. No esperes la respuesta del ticket.",
+          "No reenvíes el correo a compañeros para preguntar si es real."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Always, and as urgent if anything was clicked or typed.",
+        "es": "Siempre, y como urgente si se hizo clic o se escribió algo."
+      }
+    },
+    {
+      "id": "KB0010",
+      "category": "access",
+      "selfService": false,
+      "title": { "en": "Request admin rights or new software", "es": "Pedir permisos de administrador o un programa nuevo" },
+      "keywords": {
+        "en": ["admin", "administrator", "admin rights", "install", "software request", "permission", "license"],
+        "es": ["admin", "administrador", "permisos", "instalar", "pedir programa", "permiso", "licencia"]
+      },
+      "summary": {
+        "en": "This is a request, not a fault. It needs a manager's approval; IT installs approved software for you.",
+        "es": "Esto es una solicitud, no una avería. Necesita la aprobación de un supervisor; IT te instala el programa aprobado."
+      },
+      "steps": {
+        "en": [
+          "Write which software or access you need and why (what task it's for).",
+          "Get your manager's approval in writing (email is fine).",
+          "Open a request with the approval attached. IT installs it; permanent admin rights are not given."
+        ],
+        "es": [
+          "Escribe qué programa o acceso necesitas y para qué tarea.",
+          "Consigue la aprobación de tu supervisor por escrito (un correo sirve).",
+          "Abre una solicitud con la aprobación adjunta. IT lo instala; no se dan permisos de administrador permanentes."
+        ]
+      },
+      "escalateWhen": {
+        "en": "Always: a person must check the approval.",
+        "es": "Siempre: una persona tiene que verificar la aprobación."
+      }
+    },
+    {
+      "id": "KB0011",
+      "category": "hardware",
+      "selfService": true,
+      "title": { "en": "New laptop first-day setup", "es": "Configuración del primer día de una laptop nueva" },
+      "keywords": {
+        "en": ["new laptop", "new computer", "setup", "first day", "onboarding", "new hire", "set up"],
+        "es": ["laptop nueva", "computadora nueva", "configurar", "primer dia", "empleado nuevo", "nuevo empleado"]
+      },
+      "summary": {
+        "en": "Sign in with your work account, set up MFA, then let Windows and Office update.",
+        "es": "Inicia sesión con tu cuenta de trabajo, configura el MFA y deja que Windows y Office se actualicen."
+      },
+      "steps": {
+        "en": [
+          "Plug in the charger and connect to the office Wi-Fi.",
+          "Sign in with the work account and temporary password from IT, then set a new password.",
+          "Set up MFA on your phone (KB0002).",
+          "Run Windows Update until it says you're up to date, and restart.",
+          "Open Outlook and Teams once so they finish setting up."
+        ],
+        "es": [
+          "Conecta el cargador y conéctate al Wi-Fi de la oficina.",
+          "Inicia sesión con la cuenta de trabajo y la contraseña temporal de IT, y crea una contraseña nueva.",
+          "Configura el MFA en tu teléfono (KB0002).",
+          "Corre Windows Update hasta que diga que está al día, y reinicia.",
+          "Abre Outlook y Teams una vez para que terminen de configurarse."
+        ]
+      },
+      "escalateWhen": {
+        "en": "The temporary password doesn't work or the laptop isn't in the asset list.",
+        "es": "La contraseña temporal no funciona o la laptop no está en la lista de equipos."
+      }
+    },
+    {
+      "id": "KB0012",
+      "category": "software",
+      "selfService": true,
+      "title": { "en": "Windows Update stuck or failing", "es": "Windows Update se queda pegado o falla" },
+      "keywords": {
+        "en": ["windows update", "update", "updates", "stuck", "failed update", "patch", "restart required"],
+        "es": ["windows update", "actualizacion", "actualizaciones", "pegado", "fallo la actualizacion", "parche", "reinicio pendiente"]
+      },
+      "summary": {
+        "en": "Restart, make sure there is free disk space, then run the Windows Update troubleshooter.",
+        "es": "Reinicia, verifica que haya espacio libre y corre el solucionador de problemas de Windows Update."
+      },
+      "steps": {
+        "en": [
+          "Restart the computer (a pending restart blocks new updates).",
+          "Free disk space if less than 10% is free (KB0008).",
+          "Settings > System > Troubleshoot > Other troubleshooters > Windows Update > Run.",
+          "Write down the error code (like 0x800f0922) for the ticket."
+        ],
+        "es": [
+          "Reinicia la computadora (un reinicio pendiente bloquea actualizaciones nuevas).",
+          "Libera espacio si queda menos de 10% libre (KB0008).",
+          "Configuración > Sistema > Solucionar problemas > Otros solucionadores de problemas > Windows Update > Ejecutar.",
+          "Anota el código de error (como 0x800f0922) para el ticket."
+        ]
+      },
+      "escalateWhen": {
+        "en": "The same update fails three times.",
+        "es": "La misma actualización falla tres veces."
+      }
+    }
+  ]
+}

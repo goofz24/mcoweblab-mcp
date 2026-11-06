@@ -123,3 +123,51 @@ The project rule is that a resume line comes only after the project is public. S
 > Built with Claude Code an MCP server that lets Claude look up MCO WebLab services, quotes and size charts through tools, reusing my quote calculator's pricing logic. Wrote and tested a Claude skill for bilingual (EN/ES) Shopify product descriptions with an automated output checker.
 
 Use "tested" only after you've run the tests and the skill yourself.
+
+
+---
+
+## Part 7. The IT helper tools (added Nov 6, 2026)
+
+Read [it-helper-tools.md](it-helper-tools.md) first. It lists the five tools and the nine guardrails.
+
+### Run them yourself
+
+1. `npm run check`: 83 tests should pass.
+2. Restart Claude Desktop, open a new chat and try the five prompts at the end of `it-helper-tools.md`. Screenshot the health check on your own laptop and the phishing draft. Those are your demo.
+3. Open `logs/tool-calls.jsonl` and find each call you just made.
+
+### Read the code (in this order)
+
+| File | What to understand |
+|---|---|
+| `src/it/diagnostics.ts` | The allowlist: how an id becomes a fixed command, and why there is no shell. |
+| `src/it/healthCheck.ts` | Collect facts (read) vs. evaluate facts (pure rules). Why that split makes it testable. |
+| `src/it/incident.ts` | The impact x urgency priority matrix, and the escalation rules. |
+| `src/it/redact.ts` | What gets hidden, and the sentences it must NOT hide. |
+| `src/auditLog.ts` + `logged()` in `src/server.ts` | How every tool call gets logged without touching each tool. |
+
+### Exercises (no solutions on purpose)
+
+1. **Write a KB article.** Add KB0013 "Teams microphone not working" in English and Spanish to `data/it-kb.json`. Add a test that `search_kb` finds it for "mi micrófono no funciona en Teams".
+2. **Add a diagnostic.** Add `battery-report` to the allowlist (Windows: `powercfg /batteryreport` writes a file, so think first: is that read-only? What would you use instead?). Explain your choice in the test name.
+3. **Change a rule.** Make the health check warn at 85% memory instead of 90%. Which tests break, and why is that good?
+4. **Find a gap.** Try to get a password past `redactPasswords()` with a sentence a real person might type. If you find one, add it as a test and fix it.
+
+### Interview practice
+
+**"How do you keep an AI agent safe on a company computer?"**
+> Read-only first. My MCP server's IT tools can check a laptop and gather evidence, but they can't change anything. Commands come from an allowlist: the AI picks an id, the code decides the exact command, and there's no shell. Anything that changes something, like a ticket, is a draft a technician reviews and submits. And every call is logged.
+
+**"What does the AI do when someone reports phishing?"**
+> That's decided by code, not the model. The words are detected, the draft goes to urgency 1 and the Security group, the KB article is marked technician-only, and if they typed a password into the chat it's removed from the ticket and the log, with a note to change it.
+
+**"How did you test it?"**
+> Unit tests feed the health rules made-up laptops, like one with 3% disk or the firewall off. The commands are tested with a fake runner, so I can check the exact command without running it, and one test fails if a dangerous word ever gets onto the allowlist. Then an MCP client test checks the tools end to end, including the log file. *(83 tests; say the number only after you ran them.)*
+
+**"Why ServiceNow priority 1 to 5?"**
+> That's ServiceNow's standard matrix: impact times urgency. Impact is how many people, urgency is how badly work is blocked. One person who can't work at all is a 3, moderate; the whole office down is a 1.
+
+### Resume line (only after it's public and you did the steps above)
+
+> Added read-only IT help desk tools to my MCP server: laptop health check, allowlisted diagnostics, bilingual knowledge base search, asset lookup and ServiceNow incident drafts with human approval, password redaction and an audit log of every AI tool call.

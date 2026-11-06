@@ -30,9 +30,18 @@ describe('MCP server', () => {
     expect(client.getInstructions()).toMatch(/isDraft/)
   })
 
-  it('offers three read-only tools, each with input and output schemas', async () => {
+  it('offers eight read-only tools (3 shop + 5 IT helper), each with input and output schemas', async () => {
     const { tools } = await client.listTools()
-    expect(tools.map((t) => t.name)).toEqual(['list_services', 'get_quote', 'get_size_chart'])
+    expect(tools.map((t) => t.name)).toEqual([
+      'list_services',
+      'get_quote',
+      'get_size_chart',
+      'run_health_check',
+      'run_diagnostic',
+      'search_kb',
+      'lookup_asset',
+      'draft_incident',
+    ])
     for (const tool of tools) {
       expect(tool.description!.length).toBeGreaterThan(80)
       expect(tool.inputSchema.type).toBe('object')

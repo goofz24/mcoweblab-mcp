@@ -2,11 +2,14 @@ import { readFileSync } from 'node:fs'
 import { z } from 'zod'
 import { parsePricing } from './pricing/parsePricing.js'
 import type { PricingData } from './pricing/types.js'
+import { parseAssets, parseKb, type ItData } from './it/itData.js'
 
 /** Everything the tools read. Loaded once when the server starts. */
 export interface ShopData {
   pricing: PricingData
   sizeCharts: SizeChartFile
+  /** SAMPLE knowledge base and asset inventory for the IT helper tools. */
+  it: ItData
 }
 
 const localized = z.object({ en: z.string().min(1), es: z.string().min(1) })
@@ -57,7 +60,7 @@ function readJson(fileUrl: URL): unknown {
 }
 
 /**
- * Reads data/pricing.json and data/size-charts.json and checks them.
+ * Reads the data/ files (price list, size charts, IT knowledge base, IT assets) and checks them.
  * The path is relative to this file, so it works from src/ (tests) and from dist/ (built server).
  * If either file is broken the server refuses to start, instead of giving Claude wrong prices.
  */
@@ -65,5 +68,9 @@ export function loadShopData(dataDir = new URL('../data/', import.meta.url)): Sh
   return {
     pricing: parsePricing(readJson(new URL('pricing.json', dataDir))),
     sizeCharts: parseSizeCharts(readJson(new URL('size-charts.json', dataDir))),
+    it: {
+      kb: parseKb(readJson(new URL('it-kb.json', dataDir))),
+      assets: parseAssets(readJson(new URL('it-assets.json', dataDir))),
+    },
   }
 }

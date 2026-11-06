@@ -1,7 +1,7 @@
 {
   "name": "mcoweblab-mcp",
-  "version": "0.1.0",
-  "description": "MCP server that gives Claude tools over MCO WebLab's services, quotes and size charts, plus a Claude skill for bilingual product descriptions.",
+  "version": "0.2.0",
+  "description": "MCP server that gives Claude tools over MCO WebLab's services, quotes and size charts, read-only IT helper tools (health check, allowlisted diagnostics, bilingual KB, asset lookup, ServiceNow incident drafts), plus a Claude skill for bilingual product descriptions.",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",

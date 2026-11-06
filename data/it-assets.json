@@ -1,0 +1,102 @@
+{
+  "$comment": "SAMPLE asset inventory for the IT helper tools. Fictional people, serial numbers and dates, made up for this demo. NOT Novus Inc data and NOT any client's data. Lifecycle stages: ordered, received, deployed, repair, retired, disposed.",
+  "sample": true,
+  "assets": [
+    {
+      "tag": "MCO-LT-001",
+      "type": "laptop",
+      "model": "Dell Latitude 5450",
+      "serial": "SMPL-DL5450-0001",
+      "assignedTo": "Ana Rivera",
+      "location": "Ponce office",
+      "status": "deployed",
+      "purchased": "2024-03-12",
+      "warrantyEnd": "2027-03-12",
+      "notes": "BitLocker on. Docking station MCO-DK-003."
+    },
+    {
+      "tag": "MCO-LT-002",
+      "type": "laptop",
+      "model": "Lenovo ThinkPad E14 Gen 6",
+      "serial": "SMPL-TPE14-0002",
+      "assignedTo": "Luis Torres",
+      "location": "Remote (Mayaguez)",
+      "status": "deployed",
+      "purchased": "2023-12-01",
+      "warrantyEnd": "2026-12-01",
+      "notes": ""
+    },
+    {
+      "tag": "MCO-LT-003",
+      "type": "laptop",
+      "model": "HP ProBook 450 G10",
+      "serial": "SMPL-HP450-0003",
+      "assignedTo": null,
+      "location": "Ponce office, IT shelf",
+      "status": "repair",
+      "purchased": "2023-06-20",
+      "warrantyEnd": "2026-06-20",
+      "notes": "Battery swelling reported. Sent for repair; warranty already ended."
+    },
+    {
+      "tag": "MCO-LT-004",
+      "type": "laptop",
+      "model": "Dell Latitude 5450",
+      "serial": "SMPL-DL5450-0004",
+      "assignedTo": null,
+      "location": "Ponce office, IT shelf",
+      "status": "received",
+      "purchased": "2026-10-28",
+      "warrantyEnd": "2029-10-28",
+      "notes": "Spare for the next new hire. Not imaged yet."
+    },
+    {
+      "tag": "MCO-MN-001",
+      "type": "monitor",
+      "model": "Dell P2425H 24 in",
+      "serial": "SMPL-P2425-0101",
+      "assignedTo": "Ana Rivera",
+      "location": "Ponce office",
+      "status": "deployed",
+      "purchased": "2024-03-12",
+      "warrantyEnd": "2027-03-12",
+      "notes": ""
+    },
+    {
+      "tag": "MCO-PH-001",
+      "type": "phone",
+      "model": "iPhone 15",
+      "serial": "SMPL-IP15-0201",
+      "assignedTo": "Luis Torres",
+      "location": "Remote (Mayaguez)",
+      "status": "deployed",
+      "purchased": "2024-10-05",
+      "warrantyEnd": "2025-10-05",
+      "notes": "Used for MFA and the shop's WhatsApp line."
+    },
+    {
+      "tag": "MCO-PR-001",
+      "type": "printer",
+      "model": "Brother HL-L3280CDW",
+      "serial": "SMPL-BRL3280-0301",
+      "assignedTo": "Shared",
+      "location": "Ponce office, front desk",
+      "status": "deployed",
+      "purchased": "2025-01-15",
+      "warrantyEnd": "2026-01-15",
+      "notes": "Shared color printer. Toner model TN229."
+    },
+    {
+      "tag": "MCO-LT-000",
+      "type": "laptop",
+      "model": "Acer Aspire 5 (2019)",
+      "serial": "SMPL-AA5-0000",
+      "assignedTo": null,
+      "location": "Storage",
+      "status": "retired",
+      "purchased": "2019-08-01",
+      "warrantyEnd": "2020-08-01",
+      "notes": "Retired 2025-02. Drive wiped, waiting for e-waste pickup."
+    }
+  ]
+}
