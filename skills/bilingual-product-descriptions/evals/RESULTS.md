@@ -16,9 +16,9 @@ The outputs are saved next to each case as `output-run1.md`.
 
 `scripts/check_description.mjs` checks structure and the most dangerous mistakes: missing sections, titles over 70 characters, meta descriptions over 155, word counts, matching bullet counts in both languages, numbers that aren't in the facts, risky claims (organic, best, natural, healthy, handmade and more) that aren't in the facts, and the brand's "never say" words. Claims that only appear in the owner's notes count as invented. Its own behavior is tested in `test/skill-checker.test.ts` (7 tests, including cases it must catch).
 
-It can't judge tone, whether the Spanish sounds natural, or a claim worded in a way it doesn't know. That still needs a person: **Mel has not reviewed these outputs yet.**
+It can't judge tone, whether the Spanish sounds natural, or a claim worded in a way it doesn't know. That still needs a person: **Mel (a native Puerto Rican Spanish speaker) reviewed all three Spanish outputs on Nov 6, 2026 and found them good.**
 
 ## To do before calling this "tested" on a resume
 
-1. Mel reads the three outputs and notes anything wrong, especially the Spanish.
+1. Done Nov 6, 2026: Mel read the three outputs and found the Spanish good.
 2. Optional: run it on one real client product, with the client's permission, and compare with the copy on their store.

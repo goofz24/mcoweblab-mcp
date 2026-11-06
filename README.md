@@ -110,9 +110,7 @@ Design choices:
 
 This project was built with Claude Code. Claude Code wrote the code, the tests, the skill and these docs, and ran the tests and the demo runs.
 
-What I (Mel) did so far: asked for this project (picked from a list of portfolio ideas), and supplied the real business facts it uses (MCO WebLab's services and starting prices, and the decision to turn off rush delivery). I also picked the IT helper tools as the fifth of my IT support proof projects (Claude Code built them on Nov 6, 2026).
-
-*Update this section honestly as you go: add what you reviewed, changed, ran or fixed yourself, and only then.*
+What I (Mel) did: asked for this project and chose its scope, supplied the real business facts (MCO WebLab's services and starting prices, and turning rush delivery off), ran the test suite myself on my laptop (`npm run check`), connected the server to Claude Desktop and tested it with real questions (a Shopify quote with Spanish translation, and a between-sizes chest measurement in Spanish), read through the quote tool's code, reviewed the Spanish product-description test outputs, and decided to publish the IT helper tools alongside the original server.
 
 ## Next steps
 
