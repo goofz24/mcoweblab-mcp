@@ -121,7 +121,7 @@ describe('allowlisted diagnostics', () => {
   const calls: { file: string; args: readonly string[] }[] = []
   const fake: CommandRunner = async (file, args) => {
     calls.push({ file, args })
-    return { stdout: 'Physical Address. . . : 3C-52-82-AA-BB-CC\r\nC:\\Users\\mco23\\AppData\nPing OK', stderr: '', exitCode: 0, timedOut: false }
+    return { stdout: 'Physical Address. . . : 3C-52-82-AA-BB-CC\r\nC:\\Users\\demo\\AppData\nPing OK', stderr: '', exitCode: 0, timedOut: false }
   }
 
   it('only has read-only commands on the list', () => {
