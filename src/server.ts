@@ -156,8 +156,10 @@ export function createServer(data: ShopData, options: ServerOptions = {}): McpSe
           .positive()
           .optional()
           .describe('Total number of pages wanted. Leave it out to use the pages included in the starting price.'),
-        addons: z.array(z.enum(addonIds)).default([]).describe('Add-on ids, for example "bilingual" for an English + Spanish site.'),
-        maintenance: z.boolean().default(false).describe('Add monthly maintenance.'),
+        addons: z.array(z.enum(addonIds)).default([]).describe(
+            'Add-on ids, for example "bilingual" for an English + Spanish site. Monthly maintenance is not an add-on: use the separate maintenance setting. Rush delivery is not offered.',
+          ),
+        maintenance: z.boolean().default(false).describe('Add monthly maintenance (billed monthly, separate from the one-time price).'),
         language,
       },
       outputSchema: {
