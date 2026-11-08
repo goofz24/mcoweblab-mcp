@@ -1,5 +1,7 @@
 # MCO WebLab MCP server + Claude skill
 
+[![CI](https://github.com/goofz24/mcoweblab-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/goofz24/mcoweblab-mcp/actions/workflows/ci.yml)
+
 A small [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that gives Claude tools over MCO WebLab's own data, a set of **read-only IT help desk tools** (computer health check, allowlisted diagnostics, bilingual knowledge base, asset lookup, ServiceNow incident drafts), and a Claude skill for writing bilingual (English and Puerto Rico Spanish) Shopify product descriptions.
 
 Ask Claude *"What would a 5-page Shopify site with Spanish translation cost?"* and it calls `get_quote`, which runs the same pricing code as the quote calculator on mcoweblab.com, and answers *"$950 to $1,190, about 4 weeks. This is a draft estimate..."*. See [docs/demo-runs.md](docs/demo-runs.md) for real recorded runs.
@@ -34,6 +36,8 @@ npm install
 npm run check      # typecheck + build + 83 tests
 npm run inspect    # optional: opens the MCP Inspector in the browser to call the tools by hand
 ```
+
+GitHub Actions runs `npm run check` on every push and pull request, on Ubuntu (Node 20 and 22) and Windows (Node 22). See [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ### Connect it to Claude Code
 
