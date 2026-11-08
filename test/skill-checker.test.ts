@@ -4,7 +4,9 @@ import { describe, expect, it } from 'vitest'
 import { check } from '../skills/bilingual-product-descriptions/scripts/check_description.mjs'
 
 type Result = { ok: boolean; problems: string[] }
-const read = (path: string) => readFileSync(new URL(`../skills/bilingual-product-descriptions/${path}`, import.meta.url), 'utf8')
+// Normalize line endings so the edits below match on Windows checkouts (CRLF) too.
+const read = (path: string) =>
+  readFileSync(new URL(`../skills/bilingual-product-descriptions/${path}`, import.meta.url), 'utf8').replace(/\r\n/g, '\n')
 
 const facts = read('examples/01-coffee/facts.md')
 const voice = read('examples/01-coffee/voice.md')
